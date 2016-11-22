@@ -19,6 +19,13 @@ ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock
 
 How to setup NginX
 ------------------
+```bash
+# installation
+sudo apt-get install nginx
+# nginx restart (after modifying configuration file)
+sudo nginx -s reload
+```
+
 First you have to open the nginx configuration file and then locate the part for the http configuration:
 ```bash
 # open the file
