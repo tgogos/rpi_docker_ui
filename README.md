@@ -17,8 +17,43 @@ ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock
 ```
 
 
-How to run
-----------
+How to setup NginX
+------------------
+First you have to open the nginx configuration file and then locate the part for the http configuration:
+```bash
+# open the file
+sudo nano /etc/nginx/nginx.conf
+
+# and then try to find the http part:
+http {
+   ...
+}
+```
+
+Inside http you have to put the following settings:
+```bash
+server {
+  listen 9090;
+
+  location / {
+    proxy_pass http://localhost:8080/;
+  }
+
+  location /rpi/ {
+    proxy_pass http://10.143.0.218:4243/;
+  }
+}
+```
+
+What this actually does:
+
+ * we have a server listening at port 9090
+ * common url requests are forwarded to the Beego app (location /)
+ * other requests with urls that contain `/rpi/` are forwarded to the Docker Remote API (location /rpi/)
+
+
+How to run the Beego app
+------------------------
 This is a Beego app, so you have to go to your "Go"/src directory, clone this git project and launch it:
 ```bash
 # something like this...
