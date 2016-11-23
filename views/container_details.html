@@ -151,8 +151,9 @@
                         </table>
 
                         <div class="panel-body text-right">
-                          <button type="button" class="btn btn-success btn-start {{#if State.Running}} disabled {{/if}}" data-container-id={{Id}}>Start</button>
-                          <button type="button" class="btn btn-danger  btn-stop  {{#unless State.Running}} disabled {{/unless}}" data-container-id={{Id}}>Stop</button>
+                          <button type="button" class="btn btn-success btn-start    {{#if State.Running}} disabled {{/if}}" data-container-id={{Id}}>Start</button>
+                          <button type="button" class="btn btn-warning btn-restart  {{#unless State.Running}} disabled {{/unless}}" data-container-id={{Id}}>Restart</button>
+                          <button type="button" class="btn btn-danger  btn-stop     {{#unless State.Running}} disabled {{/unless}}" data-container-id={{Id}}>Stop</button>
                         </div>
 
                       </script>

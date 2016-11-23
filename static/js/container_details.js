@@ -40,6 +40,34 @@ $(document).ready(function(){
         });
       });
 
+
+
+      $(".btn-restart").on("click",function(event){
+
+        containerID = $(this).attr('data-container-id');
+
+        $.ajax({
+            type: 'POST',
+            url:  '/rpi/containers/'+ containerID +'/restart',
+            dataType: 'json',
+            success: function(data,textStatus,jqXHR)
+            {
+              if (jqXHR.status == "204") {
+                console.log('restarted...');
+                location.reload();
+              }
+            },
+            error: function(err)
+            {
+              console.log(err);
+            },
+            timeout: 30000
+        });
+      });
+
+
+
+
       $(".btn-stop").on("click",function(event){
 
         containerID = $(this).attr('data-container-id');
