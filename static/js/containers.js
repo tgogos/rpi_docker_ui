@@ -10,6 +10,11 @@ $(document).ready(function(){
       var html    = template(data);
       $(".containers-content").html(html);
 
+      $('#dataTables-example').DataTable({
+          responsive: true,
+          paging: false
+      });
+
     });
   });
 
