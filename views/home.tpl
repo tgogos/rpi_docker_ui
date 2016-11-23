@@ -57,9 +57,12 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li>
-                            <a href="/images"><i class="fa fa-dashboard fa-fw"></i> Images</a>
-                        </li>
+                      <li>
+                          <a href="/images"><i class="fa fa-cubes fa-fw"></i> Images</a>
+                      </li>
+                      <li>
+                          <a href="/containers"><i class="fa fa-cube fa-fw"></i> Containers</a>
+                      </li>
                         <!-- <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
