@@ -14,4 +14,5 @@ func init() {
 
 		beego.Router("/containers", &controllers.ContainersController{})
 		beego.Router("/container_details/?:id", &controllers.ContainerDetailsController{})
+		beego.Router("/run", &controllers.RunController{})
 }
