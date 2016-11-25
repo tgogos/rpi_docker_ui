@@ -91,6 +91,32 @@ $(document).ready(function(){
         });
       });
 
+
+
+      $(".btn-rm").on("click",function(event){
+
+        containerID = $(this).attr('data-container-id');
+        console.log("click");
+
+        $.ajax({
+            type: 'DELETE',
+            url:  '/rpi/containers/'+ containerID,
+            dataType: 'json',
+            success: function(data,textStatus,jqXHR)
+            {
+              if (jqXHR.status == "204") {
+                console.log('stoped...');
+                location.reload();
+              }
+            },
+            error: function(err)
+            {
+              console.log(err);
+            },
+            timeout: 30000
+        });
+      });
+
     });
   });
 

@@ -27,8 +27,9 @@ $(document).ready(function(){
                         };
 
         jsonObj.Image  = $('.select-image').val();
-        //jsonObj.Cmd[0] = $('.fc-cmd').val();
+        jsonObj.Cmd    = $('.fc-cmd').val().split(' ');
         console.log(jsonObj);
+        console.log(JSON.stringify(jsonObj));
 
         $.ajax({
             type: 'POST',
