@@ -1,7 +1,7 @@
 package routers
 
 import (
-	"docker-ui/controllers"
+	"rpi_docker_ui/controllers"
 	"github.com/astaxie/beego"
 )
 
